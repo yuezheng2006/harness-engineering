@@ -1,3 +1,5 @@
+中文 | [English](README.en.md)
+
 # Harness Engineering 学习指南
 
 > 一个从概念理解到独立实践的 Harness Engineering 深度学习档案
