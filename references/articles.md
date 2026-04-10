@@ -10,34 +10,82 @@
 - **核心：** 3 人团队用 Codex 从空仓库到 100 万行代码，零手写代码。提出六大概念：仓库即记录系统、地图而非手册、机械化执行、智能体可读性、吞吐量改变合并理念、熵管理。
 - **关联：** 本仓库的学习起点，所有概念笔记的来源
 
-### 2. Martin Fowler / Birgitta Böckeler — 系统性认知
+### 2. Martin Fowler / Birgitta Böckeler — 系统性认知与控制论框架
 
-- **标题：** Harness Engineering
-- **链接：** [martinfowler.com](https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html)
-- **前传备忘录：** [first thoughts](https://martinfowler.com/articles/exploring-gen-ai/harness-engineering-memo.html) | **翻译：** [works/fowler-harness-engineering-memo-translation.md](../works/fowler-harness-engineering-memo-translation.md)
-- **作者：** Birgitta Böckeler (Thoughtworks) | **日期：** 2026-02-17
-- **核心：** 将 OpenAI 原文提炼为三层框架（Context Engineering → Architectural Constraints → Garbage Collection Agents），提出四个前瞻假说
-- **三层框架：**
+- **标题：** Harness engineering for coding agent users
+- **链接：** [martinfowler.com](https://martinfowler.com/articles/harness-engineering.html)
+- **翻译：** [works/fowler-harness-engineering-full-translation.md](../works/fowler-harness-engineering-full-translation.md)
+- **前传备忘录：** [first thoughts](https://martinfowler.com/articles/exploring-gen-ai/harness-engineering-memo.html) | **备忘录翻译：** [works/fowler-harness-engineering-memo-translation.md](../works/fowler-harness-engineering-memo-translation.md)
+- **作者：** Birgitta Böckeler (Thoughtworks) | **日期：** 2026-04-02（备忘录 2026-02-17）
+- **核心：** 控制论视角的 harness 框架——Guides（前馈）× Sensors（反馈）+ Computational（计算性）× Inferential（推理性）的 2×2 矩阵，三个规制维度，Ashby 必要多样性定律
 
-| 层 | 内容 |
-|---|------|
-| Context Engineering | 知识库 + 动态上下文（可观测性数据、浏览器导航） |
-| Architectural Constraints | LLM 审查 + 确定性 linter + 结构测试 |
-| Garbage Collection Agents | 定期扫描文档不一致和架构违规 |
+- **核心框架：Guides × Sensors + Computational × Inferential**
 
-- **四个假说：**
-  1. Harness 将成为未来的服务模板（类似今天的 service template）
-  2. 约束越严，自主性越强（限制解空间反而让 AI 更可靠）
-  3. 技术栈将趋向收敛（选择标准从"开发者偏好"变成"AI 友好度"）
-  4. Pre-AI 和 Post-AI 应用将分裂（给遗留代码补 harness 可能不经济）
-- **犀利批评：** OpenAI 原文缺少功能正确性验证——harness 管了结构和架构，但没讲怎么测行为
+|  | 计算性（确定性，CPU） | 推理性（语义，LLM） |
+|--|---------|---------|
+| **引导器（前馈）** | bootstrap 脚本、OpenRewrite、LSP | AGENTS.md、Skills、architecture.md |
+| **传感器（反馈）** | linter、ArchUnit、类型检查、覆盖率 | AI code review、LLM-as-judge |
+
+- **关键原则：**
+  - 单独用任何一种都不行——只有反馈 = 反复犯同样的错；只有前馈 = 不知道规则是否生效
+  - 计算性控制便宜、确定、每次提交都跑；推理性控制昂贵、概率性、不是每次都跑
+  - Harness engineering 是 context engineering 的一种特定形式
+
+- **三个规制维度：**
+
+| 维度 | 成熟度 | 现状 |
+|------|--------|------|
+| 可维护性 Harness | 最成熟 | 计算性传感器可靠捕获结构问题；LLM 部分解决语义问题；**两者都无法可靠捕获**：误诊、过度工程、误解指令 |
+| 架构适应度 Harness | 中等 | 本质是 Fitness Functions——性能 Skills + 可观测性规范 |
+| 行为 Harness | **最弱** | "房间里的大象"——功能正确性验证仍依赖 AI 生成的测试，"目前还不够好" |
+
+- **Harnessability（可驾驭性）：**
+  - 不是所有代码库都同样适合被 harness
+  - 强类型语言天然有类型检查传感器；清晰模块边界支持架构约束；成熟框架（如 Spring）隐式提高成功概率
+  - **Ambient Affordances**（Ned Letcher）：环境本身的结构属性使智能体更容易操作
+  - 绿地项目可以从第一天融入；遗留系统 = **harness 最需要的地方恰恰是最难构建的地方**
+
+- **Harness 模板：**
+  - 企业 80% 的服务可归入几种常见拓扑（API 服务、事件处理、数据仪表板）
+  - 服务模板 → harness 模板：引导器 + 传感器的集合，约束智能体到特定拓扑
+  - 会面临和服务模板一样的分叉/同步挑战，甚至更严重（非确定性组件更难测试）
+
+- **Ashby 必要多样性定律：**
+  - 调节器必须至少拥有与被调节系统同等的多样性
+  - LLM 能生成几乎任何东西（高多样性）→ 选定拓扑 = 削减多样性 → 全面 harness 变得可行
+  - 定义拓扑结构本身就是一种多样性削减举措
+
+- **人类角色的重新定位：**
+  - 人类开发者携带隐性 harness：社会问责感、对复杂性的审美痛感、组织记忆、"我们这里不这么做"的直觉
+  - 智能体没有这些——不知道哪个规范是承重的、哪个只是习惯
+  - **"好的 harness 不应以完全消除人类输入为目标，而应将人类输入引导到最重要的地方"**
+
+- **质量左移（Shift Quality Left）：**
+  - 按速度和成本分布检查：pre-commit 跑便宜传感器，管线跑昂贵传感器
+  - 持续漂移传感器：死代码检测、覆盖率质量、依赖扫描、SLO 退化
+
+- **开放挑战：**
+  - Harness 连贯性：引导器和传感器增长后可能相互矛盾
+  - Harness 覆盖率：类似代码覆盖率，评估 harness 自身的完整性
+  - 传感器从未触发时，如何区分高质量 vs 检测不足
+
 - **备忘录独有洞察（正式版未保留）：**
   - "OpenAI 有既得利益让我们相信 AI 可维护的代码"——对数据来源的信任保留
   - "你今天的 harness 是什么？"——务实的起步问题，审视已有实践
-  - "代码设计本身就是上下文的重要组成部分"——比三层框架更本质
-  - Harness 模板会面临和服务模板一样的分叉/同步挑战
-  - "对人类好的东西对 AI 也好"——框架易用性标准趋同
+  - "代码设计本身就是上下文的重要组成部分"——比框架更本质
   - 最后自嘲预言"harness"一词会被滥用
+
+- **与其他文章的关联：**
+
+| 本文概念 | 对应文章 |
+|---------|---------|
+| Guides × Sensors 矩阵 | 对 LangChain 组件清单和 HumanLayer 六杠杆的升维——从"有什么"到"如何协同" |
+| 行为 Harness 是大象 | 回应自己备忘录中的批评：OpenAI 缺少功能验证 |
+| Harnessability | OpenAI 的"无聊技术"选择标准的理论化 |
+| Ashby 定律 | 为 Fowler 假说 2（约束越严，自主性越强）提供控制论根基 |
+| Harness 模板 | 将备忘录假说 1 从问题升级为具体方案 |
+| 人类角色 | 对 Anthropic #7 中人类缺位的直接回应——不应消除人类，应引导人类 |
+
 - **延伸阅读：**
   - [Mitchell Hashimoto: My AI Adoption Journey #Step 5: Engineer the Harness](https://mitchellh.com/writing/my-ai-adoption-journey#step-5-engineer-the-harness)
   - [Context Engineering for Coding Agents](https://martinfowler.com/articles/context-engineering-coding-agents.html)
