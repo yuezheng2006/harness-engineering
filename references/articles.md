@@ -419,6 +419,27 @@
   - Deep Agents 框架支持生产级持续学习
 - **与其他文章关联：** Meta-Harness 论文的 harness 层自动化学习的框架化阐述；Fowler #9 反馈飞轮在智能体层面的体现
 
+### 16. ⭐ Chachamaru127 — claude-code-harness v4.2 "Hokage"（产品级实现案例）
+
+- **类型：** 开源产品（非文章），MIT License
+- **链接：** [github.com/Chachamaru127/claude-code-harness](https://github.com/Chachamaru127/claude-code-harness) | **被引版本 tag：** [`v4.2.0`](https://github.com/Chachamaru127/claude-code-harness/tree/v4.2.0)（上游已迭代到 v4.3.x，本仓库分析以 v4.2.0 为准）
+- **作者：** Chachamaru127（日本开发者） | **被分析版本：** v4.2 "Hokage"（2026-04，对齐 CC 2.1.99-110 + Opus 4.7）
+- **核心：** Claude Code 上当下最完整的开源 harness 实现之一。Plan → Work → Review → Release 五动词工作流 + Go 原生 guardrail 引擎（13 条规则 R01–R13，<10ms 响应）+ self-referential 演化（用 harness 改进 harness）
+- **本仓库分析：** [thinking/guides-sensors-meets-claude-code-harness.md](../thinking/guides-sensors-meets-claude-code-harness.md)
+- **关键架构：**
+  - **Go 原生引擎**：v3 (bash + Node.js, 40-60ms hooks) → v4 (Go 单二进制, 10ms)，25× 加速、零 Node.js 依赖
+  - **R01–R13 guardrail**：声明式规则，actions 涵盖 deny/ask/warn 三档（如 R01 禁 sudo、R06 禁 force push、R12 警告 push to main）
+  - **5 verb skills**：把 42 个 skill 收敛为 5 个动词命令，降低认知负担
+  - **Advisor Strategy**：long-running 任务的"按需推理"模式——执行者持续推进，仅在高风险/重复失败/plateau 时唤起 advisor
+  - **PreCompact hook**：长任务运行中阻止 Claude Code 自动压缩 context，防止任务被切断
+  - **harness doctor --residue**：检测代码删除后留下的 stale 引用，对应 OpenAI 原文的"垃圾回收智能体"概念
+- **对照价值：**
+  - 可作为 Böckeler Guides×Sensors 框架的产品级压力测试样本——四个象限**初看都有候选实现**，但 R01–R13 guardrail 与 Advisor Strategy 的归类立刻拉伸了分类边界（详见 thinking/ 分析）
+  - 揭示了框架装不下的现象：条件激活的推理性控制（Advisor）、guardrail 引擎里前馈/反馈的融合、harness 自身的接口维护成本（v4.2 七项主要变更里 6 项是追上游、1 项是修自伤、0 项是主动新能力）
+  - self-referential 演化是 cross-article-insights 洞见 1 "Harness Gardening" 的活样本——README 直白记录"sync 命令悄悄删除配置块"的 4 次事故
+  - 强制日文响应（CLAUDE.md 第 38 行）暴露了 harness 必带价值观锁定，对应洞见 7 的单一栽培风险
+- **关联：** OpenAI 原文（六大概念的全量产品化）、Fowler/Böckeler（2×2 矩阵的实证检验）、Anthropic #7（meta-harness 思想的 Claude Code 侧落地）
+
 ---
 
 ## 脉络二：云原生时代的 Harness.io（交付与平台工程）

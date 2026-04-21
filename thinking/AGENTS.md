@@ -18,6 +18,7 @@
 | [meta-harness-tensions.md](meta-harness-tensions.md) | Meta-Harness 的五个张力 | Anthropic Managed Agents 与既有实践的矛盾 |
 | [evaluation-elephant-in-the-room.md](evaluation-elephant-in-the-room.md) | 评估是房间里的大象 | 行为正确性验证是整个体系的阿喀琉斯之踵 |
 | [harness-for-solo-developers.md](harness-for-solo-developers.md) | 个人开发者的 Harness | 六大概念的适用性分析：直接可用 vs 需要降级 vs 不适用 |
+| [guides-sensors-meets-claude-code-harness.md](guides-sensors-meets-claude-code-harness.md) | Böckeler 框架 vs claude-code-harness v4.2 | 产品级实现暴露的五个张力：Advisor 装不进 2×2、guardrail 融合前馈反馈、行为 Harness 是结构性绕过、追上游占 95% 维护成本、harness 必带价值观锁定 |
 
 ## 写作方向参考
 
