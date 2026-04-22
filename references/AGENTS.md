@@ -9,9 +9,10 @@
 
 ## 文章
 
-详见 [articles.md](articles.md) — 完整的文章索引，含三条脉络 18 篇文章的深度摘要。
+详见 [articles.md](articles.md) — 完整的文章索引，含三条脉络 **18 篇文章 + 1 项已跟踪产品** 的深度摘要。
+权威计数与编号规则以 `articles.md` 头部为准；本表是它的概览缓存。
 
-### 脉络一：AI 时代的 Harness Engineering
+### 脉络一：AI 时代的 Harness Engineering（15 篇）
 
 | # | 文章 | 作者 | 核心贡献 |
 |---|------|------|---------|
@@ -31,13 +32,24 @@
 | 14 | ⭐ [Eight years of wanting](https://lalitm.com/post/building-syntaqlite-ai/) | Lalit Maganti | AI 构建真实项目的坦诚复盘 |
 | 15 | [Continual learning for AI agents](https://blog.langchain.com/continual-learning-for-ai-agents/) | Harrison Chase | 三层学习：模型/Harness/上下文 |
 
-### 脉络二：云原生 Harness.io
+### 脉络二：云原生 Harness.io（2 篇）
 
 | # | 文章 | 核心贡献 |
 |---|------|---------|
-| 5 | [Harness.io 官方](https://www.harness.io/blog/understanding-ci-cd-platforms-the-backbone-of-modern-devops) | CI/CD 平台全局架构 |
-| 6 | Medium 实战 | 未找到，待补充 |
-| 7 | [Google Cloud Architecture](https://docs.cloud.google.com/architecture/partners/harness-cicd-pipeline-for-rag-app) | Harness + GCP 部署 RAG |
+| 16 | [Harness.io 官方](https://www.harness.io/blog/understanding-ci-cd-platforms-the-backbone-of-modern-devops) | CI/CD 平台全局架构 |
+| 17 | [Google Cloud Architecture](https://docs.cloud.google.com/architecture/partners/harness-cicd-pipeline-for-rag-app) | Harness + GCP 部署 RAG |
+
+### 脉络三：效率悖论与能力进化（1 篇）
+
+| # | 文章 | 核心贡献 |
+|---|------|---------|
+| 18 | [YDD / Miss-you](https://yousali.com/posts/20260303-ai-coding-efficiency-to-evolution/) | 效率悖论的系统性拆解：约束理论 + Spec/Rule/Skill + 验证闭环 + 并发 |
+
+### 已跟踪产品 / 项目（不计入文章数）
+
+| 项 | 项目 | 说明 |
+|---|------|------|
+| ⭐ | [Chachamaru127 / claude-code-harness v4.2 "Hokage"](https://github.com/Chachamaru127/claude-code-harness/tree/v4.2.0) | Claude Code 上当下最完整的开源 harness 实现之一；Plan→Work→Review→Release 五动词 + Go 原生 R01–R13 guardrail。本仓库分析见 `thinking/guides-sensors-meets-claude-code-harness.md` |
 
 ## 项目
 
@@ -65,6 +77,16 @@
 
 ## 待补充
 
+> 占位条目统一收在这里，**不进 `articles.md` 的编号正文**，避免污染文章计数。
+
 - [ ] Geoffrey Huntley 的 Ralph 原始文章
 - [ ] OpenAI 相关文章：Codex App Server、Responses API
-- [ ] Medium 实战专栏（标题待确认）
+- [ ] Medium 实战专栏 — "Beyond Migration: How We Engineered a Secure & Intelligent Delivery Platform with Harness CICD"（标题可能已变更或文章已下架）
+
+## 下一步
+
+读完一篇资料后：
+- 想对它的论点做独立分析或质疑 → [thinking/](../thinking/)
+- 想翻译为中文输出 → [works/](../works/)
+- 想用它的方法做实验 → [practice/](../practice/)
+- 想沉淀其中的提示词模板 → [prompts/](../prompts/)

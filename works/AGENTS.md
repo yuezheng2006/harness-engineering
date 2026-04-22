@@ -37,3 +37,8 @@
 - 一个 AGENTS.md 模板（适用于中小团队）
 - 一套自定义 linter 的最小可行示例
 - 一个"从零到发布"的 Harness Engineering 实践教程
+
+## 下一步
+
+作品发出后，把外部读者的反馈（评论、转发、质疑）回流到 [feedback/](../feedback/)；
+新出现的洞见、被挑战的论点回到 [thinking/](../thinking/) 继续打磨。

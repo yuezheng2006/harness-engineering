@@ -107,7 +107,7 @@ harness-engineering/
 │   ├── 05-throughput-...  #   吞吐量改变合并理念
 │   └── 06-harness-...     #   Harness 精确定义（Fowler 控制论扩展）
 │
-├── thinking/              # Phase 2：独立思考与质疑（5 篇）
+├── thinking/              # Phase 2：独立思考与质疑（6 篇）
 ├── practice/              # Phase 3：小项目实验（1 个 Ralph Demo）
 ├── feedback/              # Phase 4：踩坑与迭代心得（1 篇）
 ├── works/                 # Phase 5：可展示的作品（11 篇翻译）
@@ -120,7 +120,7 @@ harness-engineering/
 ## 🚀 学习路线
 
 - [x] **Phase 1：理解核心概念** — 7 篇概念笔记，覆盖 OpenAI 六大概念 + Fowler 控制论扩展
-- [x] **Phase 2：形成自己的观点** — 5 篇独立思考（持续中）
+- [x] **Phase 2：形成自己的观点** — 6 篇独立思考（持续中）
 - [x] **Phase 3：选一个小项目实践** — Ralph Demo 完成（321 秒，$0.31）
 - [x] **Phase 4：记录反馈迭代** — 1 篇（持续中）
 - [x] **Phase 5：输出可展示的作品** — 11 篇专业翻译

@@ -16,13 +16,15 @@
 | `prompts/` | 提示词积累 | 学习过程中验证有效的提示词 |
 | `references/` | 外部资源 | 相关文章、仓库、工具的索引 |
 
-## 学习路线
+## 学习路线（进度）
 
-- [ ] Phase 1：理解核心概念（concepts/）
-- [ ] Phase 2：形成自己的观点（thinking/）
-- [ ] Phase 3：选一个小项目实践（practice/）
-- [ ] Phase 4：记录反馈迭代（feedback/）
-- [ ] Phase 5：输出可展示的作品（works/）
+- [x] Phase 1：理解核心概念（concepts/，7 篇）
+- [x] Phase 2：形成自己的观点（thinking/，6 篇，持续中）
+- [x] Phase 3：选一个小项目实践（practice/，1 个 Ralph Demo）
+- [x] Phase 4：记录反馈迭代（feedback/，1 篇，持续中）
+- [x] Phase 5：输出可展示的作品（works/，11 篇翻译 + 1 篇原创）
+
+> 进度详情以人类向 README.md 的"学习路线"段为准；本节是给智能体的快照。
 
 ## 导航
 
