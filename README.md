@@ -105,7 +105,8 @@ harness-engineering/
 │   ├── 03-entropy-...     #   熵管理与垃圾回收
 │   ├── 04-agent-...       #   智能体可读性
 │   ├── 05-throughput-...  #   吞吐量改变合并理念
-│   └── 06-harness-...     #   Harness 精确定义（Fowler 控制论扩展）
+│   ├── 06-harness-...     #   Harness 精确定义（Fowler 控制论扩展）
+│   └── 07-spec-as-product.md #   约束即产品（Symphony 延伸）
 │
 ├── thinking/              # Phase 2：独立思考与质疑（6 篇）
 ├── practice/              # Phase 3：小项目实验（1 个 Ralph Demo）

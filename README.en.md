@@ -106,7 +106,8 @@ harness-engineering/
 │   ├── 03-entropy-...     #   Entropy & garbage collection
 │   ├── 04-agent-...       #   Agent readability
 │   ├── 05-throughput-...  #   Throughput changes merge philosophy
-│   └── 06-harness-...     #   Harness definition (Fowler control-theory extension)
+│   ├── 06-harness-...     #   Harness definition (Fowler control-theory extension)
+│   └── 07-spec-as-product.md #   Spec as product (Symphony extension)
 │
 ├── thinking/              # Phase 2: Independent analysis (6 articles)
 ├── practice/              # Phase 3: Hands-on experiments (1 Ralph Demo)
