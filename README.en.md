@@ -1,8 +1,8 @@
 [中文](README.md) | English
 
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
-![Articles](https://img.shields.io/badge/articles-19-green)
-![Translations](https://img.shields.io/badge/translations-12-orange)
+![Articles](https://img.shields.io/badge/articles-20-green)
+![Translations](https://img.shields.io/badge/translations-13-orange)
 
 # Harness Engineering Study Guide
 
@@ -112,10 +112,10 @@ harness-engineering/
 ├── thinking/              # Phase 2: Independent analysis (8 articles)
 ├── practice/              # Phase 3: Hands-on experiments (1 Ralph Demo)
 ├── feedback/              # Phase 4: Lessons learned (1 article)
-├── works/                 # Phase 5: Shareable outputs (12 translations + 1 original)
+├── works/                 # Phase 5: Shareable outputs (13 translations + 1 original)
 ├── tools/                 # Tools that reduce the 6 complexity dimensions
 ├── prompts/               # Validated prompts collection
-└── references/            # External resource index (19 articles with deep summaries)
+└── references/            # External resource index (20 articles with deep summaries)
 ```
 
 Each subdirectory has its own `AGENTS.md` explaining its purpose and conventions — a direct practice of the "progressive disclosure" principle from the original article.
@@ -126,15 +126,15 @@ Each subdirectory has its own `AGENTS.md` explaining its purpose and conventions
 - [x] **Phase 2: Form your own opinions** — 8 independent analyses (ongoing)
 - [x] **Phase 3: Pick a small project to practice** — Ralph Demo completed (321s, $0.31)
 - [x] **Phase 4: Record feedback & iterations** — 1 article (ongoing)
-- [x] **Phase 5: Produce shareable work** — 12 professional translations + 1 original synthesis
+- [x] **Phase 5: Produce shareable work** — 13 professional translations + 1 original synthesis
 
 ## 📚 Research Library
 
-19 articles across three knowledge tracks + 3 extended readings:
+20 articles across three knowledge tracks + 3 extended readings:
 
 | Track | Coverage | Perspectives |
 |-------|----------|-------------|
-| AI-Era Harness Engineering | 16 articles | OpenAI → Fowler → Anthropic → LangChain → Stanford |
+| AI-Era Harness Engineering | 17 articles | OpenAI → Fowler → Anthropic → LangChain → Stanford → Claude Code reverse engineering |
 | Cloud-Native Harness.io | 2 articles | CI/CD platform architecture (same name, different meaning) |
 | Efficiency Paradox & Capability Evolution | 1 article | YDD systematic teardown: TOC + Spec/Rule/Skill |
 | Extended Reading | 3 articles | Mitchell Hashimoto, Context Engineering, Human-Agent collaboration |
@@ -144,7 +144,7 @@ See [references/articles.md](references/articles.md) — each article includes c
 ## 📖 Translations
 
 <details>
-<summary><b>12 Chinese translations of key articles</b> (click to expand)</summary>
+<summary><b>13 Chinese translations of key articles</b> (click to expand)</summary>
 
 | Translation | Original Author | Source |
 |-------------|----------------|--------|
@@ -160,6 +160,7 @@ See [references/articles.md](references/articles.md) — each article includes c
 | [Agent-driven Development](works/github-agent-driven-development-translation.md) | Tyler McGoffin | GitHub |
 | [Continual Learning](works/langchain-continual-learning-translation.md) | Harrison Chase | LangChain |
 | [Codex Orchestration Spec: Symphony](works/openai-codex-symphony-translation.md) | Kotliarskyi et al. | OpenAI |
+| [Claude Code Architecture (Reverse Engineered)](works/claude-code-architecture-reverse-translation.md) | Vikash Rungta | Substack |
 
 </details>
 
