@@ -248,6 +248,12 @@ git config core.hooksPath .githooks
 
 [![Star History Chart](https://api.star-history.com/svg?repos=deusyu/harness-engineering&type=Date)](https://star-history.com/#deusyu/harness-engineering&Date)
 
+## 💛 赞助支持
+
+如果这份学习档案为你节省了时间，欢迎[赞助我的开源工作](https://github.com/sponsors/deusyu)——你的支持让它持续更新、保持免费与开放。
+
+[![Sponsor](https://img.shields.io/github/sponsors/deusyu?label=Sponsor&logo=github)](https://github.com/sponsors/deusyu)
+
 ## 📄 License
 
 MIT
