@@ -9,10 +9,10 @@
 
 ## 文章
 
-详见 [articles.md](articles.md) — 完整的文章索引，含三条脉络 **21 篇文章 + 1 项已跟踪产品** 的深度摘要。
+详见 [articles.md](articles.md) — 完整的文章索引，含三条脉络 **28 篇文章 + 1 项已跟踪产品** 的深度摘要。
 权威计数与编号规则以 `articles.md` 头部为准；本表是它的概览缓存。
 
-### 脉络一：AI 时代的 Harness Engineering（18 篇）
+### 脉络一：AI 时代的 Harness Engineering（25 篇）
 
 | # | 文章 | 作者 | 核心贡献 |
 |---|------|------|---------|
@@ -34,19 +34,26 @@
 | 16 | [OpenAI Symphony](https://openai.com/index/open-source-codex-orchestration-symphony/) | Kotliarskyi 等 | 任务跟踪器作为控制平面 + SPEC/WORKFLOW 即产品 |
 | 17 | [Claude Code Architecture](https://vrungta.substack.com/p/claude-code-architecture-reverse) | Vikash Rungta | Claude Code 运行外壳、TAOR 循环、工具原语、权限与上下文管理的外部逆向分析 |
 | 18 | [Harness 系列文章之 7：关于 subagent](https://x.com/dongxi_nlp/status/2068922428516892998) | 马东锡 NLP | Subagent = tool call 入口 + child runtime；区分 session/context/subagent 与 evidence 回流 |
+| 19 | [Fowler/Maintainability sensors](https://martinfowler.com/articles/sensors-for-coding-agents.html) | Birgitta Böckeler | 计算性 vs 推理性传感器谱系 + 失败案例 + AI 评审作为垃圾回收 |
+| 20 | [Fowler/SPDD](https://martinfowler.com/articles/structured-prompt-driven/) | Wei Zhang, Jessie Jie Xia | REASONS Canvas 七维 + prompt 即一等交付物 + 双向闭环 |
+| 21 | [LangChain/ADLC](https://www.langchain.com/blog/the-agent-development-lifecycle) | Harrison Chase | 智能体开发生命周期 + framework/runtime/harness 三分类 |
+| 22 | [LangChain/Interpreters in Deep Agents](https://www.langchain.com/blog/give-your-agents-an-interpreter) | Hunter Lovell | interpreter 是第三类上下文表面 + 35% token 节省 |
+| 23 | [Anthropic/质量回归复盘](https://www.anthropic.com/engineering/april-23-postmortem) | Anthropic 工程团队 | 三起独立变更叠加成质量退化 + 变更治理清单（第一手反例） |
+| 24 | [Agentic Harness Engineering 论文](https://arxiv.org/html/2604.25850v4) | Jiahang Lin 等（复旦/北大/奇绩） | 可观测性驱动的 Harness 自动演化 + 每次编辑即可证伪契约 |
+| 25 | [Overeager Coding Agents 论文](https://arxiv.org/html/2605.18583v1) | Yubin Qu 等 | 越界动作测量 + 提示声明授权反而降低边界推断 |
 
 ### 脉络二：云原生 Harness.io（2 篇）
 
 | # | 文章 | 核心贡献 |
 |---|------|---------|
-| 19 | [Harness.io 官方](https://www.harness.io/blog/understanding-ci-cd-platforms-the-backbone-of-modern-devops) | CI/CD 平台全局架构 |
-| 20 | [Google Cloud Architecture](https://docs.cloud.google.com/architecture/partners/harness-cicd-pipeline-for-rag-app) | Harness + GCP 部署 RAG |
+| 26 | [Harness.io 官方](https://www.harness.io/blog/understanding-ci-cd-platforms-the-backbone-of-modern-devops) | CI/CD 平台全局架构 |
+| 27 | [Google Cloud Architecture](https://docs.cloud.google.com/architecture/partners/harness-cicd-pipeline-for-rag-app) | Harness + GCP 部署 RAG |
 
 ### 脉络三：效率悖论与能力进化（1 篇）
 
 | # | 文章 | 核心贡献 |
 |---|------|---------|
-| 21 | [YDD / Miss-you](https://yousali.com/posts/20260303-ai-coding-efficiency-to-evolution/) | 效率悖论的系统性拆解：约束理论 + Spec/Rule/Skill + 验证闭环 + 并发 |
+| 28 | [YDD / Miss-you](https://yousali.com/posts/20260303-ai-coding-efficiency-to-evolution/) | 效率悖论的系统性拆解：约束理论 + Spec/Rule/Skill + 验证闭环 + 并发 |
 
 ### 已跟踪产品 / 项目（不计入文章数）
 

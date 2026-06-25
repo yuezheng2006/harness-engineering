@@ -10,7 +10,7 @@
 > **下游引用都是本文的冗余缓存：** 根 `README.md` / `README.en.md` 的 badge、`prompts/deep-research-tracker.md` 的去重清单、`references/AGENTS.md` 的概览表。
 > 新增/删除文章时，必须**同一次提交**更新本文 + 所有下游缓存。
 >
-> 当前规模：**21 篇文章**（脉络一 18 + 脉络二 2 + 脉络三 1）+ **1 项已跟踪产品**（不计入文章数）。最近一次同步：2026-06-23。
+> 当前规模：**28 篇文章**（脉络一 25 + 脉络二 2 + 脉络三 1）+ **1 项已跟踪产品**（不计入文章数）。最近一次同步：2026-06-25。
 
 ## 脉络一：AI 时代的 Harness Engineering（大模型护栏与认知工程）
 
@@ -503,16 +503,184 @@
 
 ---
 
+### 19. Fowler / Birgitta Böckeler — 面向编码智能体的可维护性传感器
+
+- **标题：** Maintainability sensors for coding agents
+- **链接：** [martinfowler.com](https://martinfowler.com/articles/sensors-for-coding-agents.html)
+- **中文译文：** [works/fowler-sensors-translation.md](../works/fowler-sensors-translation.md)
+- **作者：** Birgitta Böckeler | **日期：** 2026-05-20
+- **核心：** Böckeler 从一个真实 TypeScript/NextJS 应用出发，系统梳理"计算性 vs 推理性"传感器谱系（type checker、ESLint、Semgrep、dependency-cruiser、mutation testing、耦合分析、AI 模块化评审），并诚实记录失败案例（耦合数据对 AI"乏善可陈"、把合理的 DI factory 误判为 god module）。
+
+- **关键洞察：**
+  - **传感器 = 反馈控制隐喻：** lint message 写成"自我修正指导"（prompt injection 式提示），让 agent 读到反馈即自纠。
+  - **计算性 vs 推理性：** 确定性检查（type/lint/依赖图）与需要判断的检查（模块化、耦合）是两类不同传感器，可靠度与误报率不同。
+  - **AI 模块化评审 = 垃圾回收：** 作者明确把它称为 garbage collection——周期性识别并清理结构腐化。
+  - **诚实的负面结果：** 不是所有传感器都有用，耦合指标对 AI 收效甚微，记录失败本身是这篇的价值。
+
+- **与其他文章关联：**
+
+| 本文概念 | 对应文章 |
+|---------|---------|
+| Guides × Sensors 框架的实操续篇 | #2 Fowler 的控制论矩阵 |
+| 机械化执行（custom linter > 文档） | 概念 3 机械化执行 |
+| AI 评审作为垃圾回收 | 概念 6 熵与垃圾回收 |
+
+- **本仓库笔记：** [thinking/guides-sensors-meets-claude-code-harness.md](../thinking/guides-sensors-meets-claude-code-harness.md)
+
+---
+
+### 20. Fowler / Wei Zhang, Jessie Jie Xia — 结构化提示驱动开发（SPDD）
+
+- **标题：** Structured-Prompt-Driven Development (SPDD)
+- **链接：** [martinfowler.com](https://martinfowler.com/articles/structured-prompt-driven/)
+- **中文译文：** [works/fowler-spdd-translation.md](../works/fowler-spdd-translation.md)
+- **作者：** Wei Zhang, Jessie Jie Xia（Martin Fowler 编辑） | **日期：** 2026-04-28
+- **核心：** 一套把提示词当一等版本化交付物的半自动 Harness：提出 REASONS Canvas 七维结构（R/E/A/S/O/N/S），主张"先修提示词再改代码、重构则反向同步 spdd-sync"的双向闭环。文末附 13 组高质量自问自答。
+
+- **关键洞察：**
+  - **Prompt 是合同，Plan 是建议：** 把结构化提示词版本化、可审查，作为变更的承重结构。
+  - **双向闭环：** 现实偏离 spec 时先改 prompt 再改代码；人工重构后用 spdd-sync 反向同步回 prompt，防止提示词漂移。
+  - **SPDD 本身就是一个 Harness：** 把上下文、约束、审查、同步全部显式化。
+  - **诚实承认边界：** "人类判断仍然是承重结构"，模型无关、不替代审查。
+
+- **与其他文章关联：**
+
+| 本文概念 | 对应文章 |
+|---------|---------|
+| Prompt 即一等可版本化交付物 | #16 OpenAI Symphony 的约束即产品、概念 07 spec-as-product |
+| REASONS Canvas 七维结构 | 概念 2 地图而非手册 + 渐进式披露 |
+| spdd-sync 反向同步防漂移 | 概念 3 机械化执行、#9 反馈飞轮 |
+
+---
+
+### 21. LangChain / Harrison Chase — 智能体开发生命周期（ADLC）
+
+- **标题：** The Agent Development Lifecycle (ADLC)
+- **链接：** [langchain.com](https://www.langchain.com/blog/the-agent-development-lifecycle)
+- **中文译文：** [works/langchain-adlc-translation.md](../works/langchain-adlc-translation.md)
+- **作者：** Harrison Chase | **日期：** 2026-05-09
+- **核心：** 提出 Build → Test → Deploy → Monitor + Iterate + Govern 的完整智能体开发生命周期，把 framework / runtime / harness 三层做了清晰区分，治理段拆出 cost / tool access / discoverability。是方法论级别的总览型骨架文。
+
+- **关键洞察：**
+  - **framework / runtime / harness 三分类：** 与本仓库主题命名正面对齐——harness 是约束与反馈层，runtime 是执行容器，framework 是编排库。
+  - **生命周期是闭环：** Monitor 产出的轨迹回流到 Iterate，把一次性 demo 变成可重复、可评测、可运营的工程。
+  - **Govern 作为一等维度：** 成本、工具访问、可发现性被显式纳入治理。
+
+- **与其他文章关联：**
+
+| 本文概念 | 对应文章 |
+|---------|---------|
+| framework/runtime/harness 三层 | #6 Anthropic 三大模式、#17 Claude Code 架构逆向 |
+| Monitor → Iterate 反馈回路 | #2 Fowler Sensors、概念 3 机械化执行 |
+| Govern / 治理维度 | 概念 6 熵与垃圾回收 |
+
+---
+
+### 22. LangChain / Hunter Lovell — Deep Agents 中的解释器
+
+- **标题：** Interpreters in Deep Agents: Code Between Tool Calls and Sandboxes
+- **链接：** [langchain.com](https://www.langchain.com/blog/give-your-agents-an-interpreter)
+- **中文译文：** [works/deep-agents-interpreter-translation.md](../works/deep-agents-interpreter-translation.md)
+- **作者：** Hunter Lovell | **日期：** 2026-05-20
+- **核心：** 提出 interpreter 是介于串行工具调用与完整沙箱之间的"第三层"，interpreter state 是继 message history、filesystem 之后的"第三类上下文表面"。给出 35% token 节省实测，以及 QuickJS / 桥接 / 运行时控制的实现细节。
+
+- **关键洞察：**
+  - **上下文表面分层：** message history / filesystem / interpreter state 是三类不同的 context surface，各自有不同的读写与投影方式。
+  - **设计上更受限是主动选择：** interpreter 主动收窄能力（而非能力不足），用受限运行时换取可控与可读。
+  - **35% token 节省：** 让智能体写代码协调工具、保存中间态，只把相关结果送入模型上下文。
+  - **横向连接：** 呼应 Cloudflare Code Mode、Anthropic PTC、RLM。
+
+- **与其他文章关联：**
+
+| 本文概念 | 对应文章 |
+|---------|---------|
+| 受限运行时即机械约束 | 概念 3 机械化执行、概念 4 智能体可读性 |
+| 上下文表面 / context surface 分层 | #6 Anthropic context editing、#18 subagent 的 context projection |
+| 用代码协调工具以省上下文 | #16 OpenAI Symphony 控制平面 |
+
+---
+
+### 23. Anthropic / 工程团队 — Claude Code 质量回归复盘
+
+- **标题：** An update on recent Claude Code quality reports
+- **链接：** [anthropic.com](https://www.anthropic.com/engineering/april-23-postmortem)
+- **中文译文：** [works/anthropic-postmortem-translation.md](../works/anthropic-postmortem-translation.md)
+- **作者：** Anthropic 工程团队 | **日期：** 2026-04-23
+- **核心：** 对三起独立的 Claude Code 质量回归逐项复盘——(1) 默认 reasoning effort 从 high 降到 medium 的产品取舍；(2) clear_thinking 缓存优化 bug（本应只清一次却每轮都清，导致"健忘/重复/乱用工具"并拖垮缓存命中）；(3) 一条 system prompt 限长指令（≤25/≤100 词）压垮编码智能。三个变更各打不同流量切片、不同时间表，叠加成"广泛而不一致的退化"。是仓库稀缺的第一手失败案例。
+
+- **关键洞察：**
+  - **变更评估的经典陷阱：** 三个变更各自通过人审 + 自动审 + 单测 + e2e + dogfooding，仍全部漏网。
+  - **system prompt 即受控产物：** 一条限长指令就能压垮编码智能，提示词必须纳入评测与审计。
+  - **现成的治理清单：** 文末"后续计划"（per-model eval 套件、消融、soak period、渐进发布、prompt 审计工具）几乎是一份 harness 变更治理清单。
+
+- **与其他文章关联：**
+
+| 本文概念 | 对应文章 |
+|---------|---------|
+| 机械化执行的盲区（多层审查仍漏网） | 概念 3 机械化执行、#2 Fowler Sensors |
+| system prompt 即受控产物 | 概念 07 spec-as-product、#16 Symphony |
+| 反例 / 事故复盘（稀缺类型） | 仓库 works/ 多为正面理论，本篇为第一手反面教材 |
+
+---
+
+### 24. 林家航 等 / 复旦·北大·奇绩智锋 — Agentic Harness Engineering（论文）
+
+- **标题：** Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses
+- **链接：** [arxiv.org/html/2604.25850v4](https://arxiv.org/html/2604.25850v4)
+- **中文译文：** [works/arxiv-agentic-harness-engineering-translation.md](../works/arxiv-agentic-harness-engineering-translation.md)
+- **作者：** Jiahang Lin, Shichun Liu, Chengjun Pan 等（复旦 / 北大 / 奇绩智锋） | **日期：** 2026-05-18 | **arXiv：** 2604.25850 v4
+- **核心：** 提出 AHE 闭环——在固定基础模型下，通过组件、经验、决策三类可观测性让 Harness 自动演化：可编辑组件文件化，轨迹压缩为可下钻证据，每次编辑附带可证伪预测。Terminal-Bench 2 上 pass@1 从 69.7% 提升到 77.0%，超过 Codex-CLI，并在 SWE-bench-verified 与跨模型迁移中保持收益。
+
+- **关键洞察：**
+  - **每次 Harness 编辑 = 可证伪契约：** 把 harness 优化从经验调参变成可验证的研究问题。
+  - **三类可观测性：** 组件 / 经验 / 决策，构成分层可下钻的证据语料库。
+  - **诚实报告局限：** 回归失明、组件非加性交互——优化并非单调可加。
+  - **直接引用仓库源头：** 参考文献含 OpenAI Harness Engineering、Anthropic harness design、LangChain deep agents。
+
+- **与其他文章关联：**
+
+| 本文概念 | 对应文章 |
+|---------|---------|
+| Harness 自动演化 / meta-harness | #11 Meta-Harness 论文、#7 Anthropic Meta-Harness |
+| 可观测性驱动的闭环 | #2 Fowler Sensors、概念 3 机械化执行 |
+| 编码智能体脚手架分类 | #13 Inside the Scaffold 论文 |
+
+---
+
+### 25. Yubin Qu 等 — 过度积极的编码智能体（论文）
+
+- **标题：** Overeager Coding Agents: Measuring Out-of-Scope Actions on Benign Tasks
+- **链接：** [arxiv.org/html/2605.18583v1](https://arxiv.org/html/2605.18583v1)
+- **中文译文：** [works/arxiv-overeager-coding-agents-translation.md](../works/arxiv-overeager-coding-agents-translation.md)
+- **作者：** Yubin Qu, Ying Zhang, Yanjun Zhang, Gelei Deng, Yuekang Li, Leo Yu Zhang, Yi Liu | **日期：** 2026-05-18 | **arXiv：** 2605.18583 v1
+- **核心：** 定义并测量编码智能体在良性任务中的 overeager actions（完成表面任务却执行用户未授权的读写）。提出 OverEager-Gen/Bench（500 场景、约 7500 次运行、4 个 agent 产品 × 6 模型），用行为梯度验证器与双通道审计栈评估越界率。
+
+- **关键洞察：**
+  - **反直觉发现：** 在提示里写明授权范围，会让 agent 从"推断边界"退化为"匹配声明文本"——Claude Code 去掉 consent 声明后越界率 0.0% → 17.1%。
+  - **框架层主导：** permission gating 由框架层决定，模型层对齐不会完整传导到行为。
+  - **授权问题是独立类别：** 区别于能力失败、提示注入、沙箱逃逸，是单独的一类风险。
+  - **实证支撑机械约束：** 证明约束必须机械强制，靠提示声明反而降低边界推断。
+
+- **与其他文章关联：**
+
+| 本文概念 | 对应文章 |
+|---------|---------|
+| 权限门控 / 边界约束 | #7 Anthropic Managed Agents 沙箱、概念 3 机械化执行 |
+| 提示声明反而降低安全 | #23 Anthropic 复盘的 system prompt 陷阱 |
+| agent 越界的实证测量 | 概念 6 熵与垃圾回收 |
+
+---
+
 ## 脉络二：云原生时代的 Harness.io（交付与平台工程）
 
-### 19. Harness.io 官方 — 全局架构
+### 26. Harness.io 官方 — 全局架构
 
 - **标题：** Understanding CI/CD Platforms: The backbone of modern DevOps
 - **链接：** [harness.io](https://www.harness.io/blog/understanding-ci-cd-platforms-the-backbone-of-modern-devops)
 - **核心：** 标准 CI/CD 平台介绍。8 大组件：SCM → Build → Test → Code Quality → Security Scan → Artifact → Deploy → Monitor
 - **Harness 差异化：** 统一管线、Test Intelligence 智能测试、最少脚本、Policy-as-Code 治理
 
-### 20. Google Cloud Architecture — 前沿场景结合
+### 27. Google Cloud Architecture — 前沿场景结合
 
 - **标题：** Harness CI/CD pipeline for RAG applications
 - **链接：** [docs.cloud.google.com](https://docs.cloud.google.com/architecture/partners/harness-cicd-pipeline-for-rag-app)
@@ -525,7 +693,7 @@
 
 ## 脉络三：效率悖论与能力进化
 
-### 21. YDD / Miss-you — 效率悖论的系统性拆解
+### 28. YDD / Miss-you — 效率悖论的系统性拆解
 
 - **标题：** 为什么 AI 写代码更快但交付没变，以及我怎么把它扳回来的
 - **链接：** [yousali.com](https://yousali.com/posts/20260303-ai-coding-efficiency-to-evolution/)
@@ -593,7 +761,7 @@ Harness Engineering（AI 护栏）     Harness.io（交付管线）
 ## 中文转译 / 二手资料（不计入文章数）
 
 > 这里收录的是**他人已发布的中文译介或二手综述**——本仓库做了归档但**不视为一手文献**。
-> 本段不参与 `### N. ...` 的全局编号，不计入 21 篇文章总数；与上方编号正文严格区分，避免污染脉络计数。
+> 本段不参与 `### N. ...` 的全局编号，不计入 28 篇文章总数；与上方编号正文严格区分，避免污染脉络计数。
 > 收录标准：内容与 Harness Engineering 直接相关、来源可追溯到具名作者 / 译者、且对本仓库已有一手文献有补充或对照价值。
 
 ### Akshay Pachaar — The Anatomy of an Agent Harness（中译版）
@@ -622,7 +790,7 @@ Harness Engineering（AI 护栏）     Harness.io（交付管线）
 
 ## 已跟踪产品 / 项目（不计入文章数）
 
-> 这里收录的是**开源产品 / 框架 / 工具**，不是文章。本段不参与"### N. ..." 的全局编号，不计入 21 篇的文章总数。
+> 这里收录的是**开源产品 / 框架 / 工具**，不是文章。本段不参与"### N. ..." 的全局编号，不计入 28 篇的文章总数。
 > 触发"产品级实现案例"的判定通常是：有可运行代码、有版本号、被本仓库 thinking/ 或 works/ 单独分析。
 
 ### ⭐ Chachamaru127 — claude-code-harness v4.2 "Hokage"（产品级实现案例）

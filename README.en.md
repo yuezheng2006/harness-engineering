@@ -1,8 +1,8 @@
 [中文](README.md) | English
 
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
-![Articles](https://img.shields.io/badge/articles-21-green)
-![Translations](https://img.shields.io/badge/translations-13-orange)
+![Articles](https://img.shields.io/badge/articles-28-green)
+![Translations](https://img.shields.io/badge/translations-20-orange)
 
 # Harness Engineering Study Guide
 
@@ -112,10 +112,10 @@ harness-engineering/
 ├── thinking/              # Phase 2: Independent analysis (9 articles)
 ├── practice/              # Phase 3: Hands-on experiments (1 Ralph Demo)
 ├── feedback/              # Phase 4: Lessons learned (1 article)
-├── works/                 # Phase 5: Shareable outputs (13 translations + 1 original + 2 external Chinese captures)
+├── works/                 # Phase 5: Shareable outputs (20 translations + 1 original + 2 external Chinese captures)
 ├── tools/                 # Tools that reduce the 6 complexity dimensions
 ├── prompts/               # Validated prompts collection
-└── references/            # External resource index (21 articles with deep summaries)
+└── references/            # External resource index (28 articles with deep summaries)
 ```
 
 Each subdirectory has its own `AGENTS.md` explaining its purpose and conventions — a direct practice of the "progressive disclosure" principle from the original article.
@@ -126,15 +126,15 @@ Each subdirectory has its own `AGENTS.md` explaining its purpose and conventions
 - [x] **Phase 2: Form your own opinions** — 9 independent analyses (ongoing)
 - [x] **Phase 3: Pick a small project to practice** — Ralph Demo completed (321s, $0.31)
 - [x] **Phase 4: Record feedback & iterations** — 1 article (ongoing)
-- [x] **Phase 5: Produce shareable work** — 13 professional translations + 1 original synthesis + 2 external Chinese captures
+- [x] **Phase 5: Produce shareable work** — 20 professional translations + 1 original synthesis + 2 external Chinese captures
 
 ## 📚 Research Library
 
-21 articles across three knowledge tracks + 3 extended readings:
+28 articles across three knowledge tracks + 3 extended readings:
 
 | Track | Coverage | Perspectives |
 |-------|----------|-------------|
-| AI-Era Harness Engineering | 18 articles | OpenAI → Fowler → Anthropic → LangChain → Stanford → Claude Code reverse engineering → Subagent runtime |
+| AI-Era Harness Engineering | 25 articles | OpenAI → Fowler → Anthropic → LangChain → Stanford → Claude Code reverse engineering → Subagent runtime → Sensors/SPDD/ADLC → Out-of-scope & quality postmortem |
 | Cloud-Native Harness.io | 2 articles | CI/CD platform architecture (same name, different meaning) |
 | Efficiency Paradox & Capability Evolution | 1 article | YDD systematic teardown: TOC + Spec/Rule/Skill |
 | Extended Reading | 3 articles | Mitchell Hashimoto, Context Engineering, Human-Agent collaboration |
@@ -144,7 +144,7 @@ See [references/articles.md](references/articles.md) — each article includes c
 ## 📖 Translations
 
 <details>
-<summary><b>13 Chinese translations of key articles</b> (click to expand)</summary>
+<summary><b>20 Chinese translations of key articles</b> (click to expand)</summary>
 
 | Translation | Original Author | Source |
 |-------------|----------------|--------|
@@ -161,6 +161,13 @@ See [references/articles.md](references/articles.md) — each article includes c
 | [Continual Learning](works/langchain-continual-learning-translation.md) | Harrison Chase | LangChain |
 | [Codex Orchestration Spec: Symphony](works/openai-codex-symphony-translation.md) | Kotliarskyi et al. | OpenAI |
 | [Claude Code Architecture (Reverse Engineered)](works/claude-code-architecture-reverse-translation.md) | Vikash Rungta | Substack |
+| [Maintainability Sensors for Coding Agents](works/fowler-sensors-translation.md) | Birgitta Böckeler | Martin Fowler |
+| [Structured-Prompt-Driven Development (SPDD)](works/fowler-spdd-translation.md) | Wei Zhang et al. | Martin Fowler |
+| [The Agent Development Lifecycle (ADLC)](works/langchain-adlc-translation.md) | Harrison Chase | LangChain |
+| [Interpreters in Deep Agents](works/deep-agents-interpreter-translation.md) | Hunter Lovell | LangChain |
+| [Claude Code Quality Postmortem](works/anthropic-postmortem-translation.md) | Anthropic Eng | Anthropic |
+| [Agentic Harness Engineering (paper)](works/arxiv-agentic-harness-engineering-translation.md) | Jiahang Lin et al. | Fudan / arXiv |
+| [Overeager Coding Agents (paper)](works/arxiv-overeager-coding-agents-translation.md) | Yubin Qu et al. | arXiv |
 
 </details>
 

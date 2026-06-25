@@ -61,11 +61,11 @@
 > 它必须自包含，因为搜索器无法访问 `references/articles.md`。
 >
 > **维护纪律：** 当 `references/articles.md` 新增/删除条目时，**同一次提交中**必须同步更新本节。两份内容的口径（脉络划分、篇数、产品/项目清单）应保持完全一致。
-> 本节最近一次同步：2026-06-23（与 `articles.md` 当前内容对齐：21 篇文章 + 1 项已跟踪产品）。
+> 本节最近一次同步：2026-06-25（与 `articles.md` 当前内容对齐：28 篇文章 + 1 项已跟踪产品）。
 
-**核心文章 21 篇，分布于三条脉络：**
+**核心文章 28 篇，分布于三条脉络：**
 
-- **脉络一 — AI 时代 Harness Engineering（18 篇）：**
+- **脉络一 — AI 时代 Harness Engineering（25 篇）：**
   - OpenAI "Harness engineering"（原点，2026-02-11）/ "An open-source spec for Codex orchestration: Symphony"（2026-04-27，任务跟踪器作为控制平面）
   - Fowler/Böckeler "Harness engineering for coding agent users"（2026-04-02）+ 前传备忘录（2026-02-17）
   - LangChain "The Anatomy of an Agent Harness"（2026-03）/ "Continual Learning for AI Agents"（2026-04-05）/ "Agent Evaluation Readiness Checklist"
@@ -80,6 +80,13 @@
   - Lalit Maganti "渴望八年，用 AI 三个月造出来"
   - Vikash Rungta "Claude Code Architecture (Reverse Engineered)"（2025-11-01，Claude Code 运行外壳、TAOR 循环、工具原语、权限与上下文管理的外部逆向分析）
   - 马东锡 NLP "Harness 系列文章之 7：关于 subagent"（2026-06-22，subagent = tool call 入口 + child runtime，区分 session/context/subagent，与 Claude Code 逆向互证）
+  - Fowler/Böckeler "Maintainability sensors for coding agents"（2026-05-20，计算性 vs 推理性传感器谱系 + 失败案例 + AI 评审作为垃圾回收）
+  - Fowler "Structured-Prompt-Driven Development (SPDD)"（2026-04-28，REASONS Canvas 七维 + prompt 即一等交付物 + 双向闭环）
+  - LangChain / Harrison Chase "The Agent Development Lifecycle (ADLC)"（2026-05-09，framework/runtime/harness 三分类的生命周期）
+  - LangChain / Hunter Lovell "Interpreters in Deep Agents"（2026-05-20，interpreter 是第三类上下文表面 + 35% token 节省）
+  - Anthropic 工程团队 "An update on recent Claude Code quality reports"（2026-04-23，三起独立变更叠加成质量退化的第一手复盘）
+  - Agentic Harness Engineering 论文（arXiv 2604.25850，复旦/北大/奇绩，可观测性驱动的 Harness 自动演化 + 可证伪契约）
+  - Overeager Coding Agents 论文（arXiv 2605.18583，越界动作测量 + 提示声明授权反而降低边界推断）
 - **脉络二 — 云原生 Harness.io（2 篇）：** Harness.io 官方全局架构 / Google Cloud 集成场景
 - **脉络三 — 效率悖论（1 篇）：** YDD/Miss-you "效率悖论的系统性拆解"（2026-03-03）
 

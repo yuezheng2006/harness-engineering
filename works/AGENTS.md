@@ -27,6 +27,13 @@
 | [langchain-continual-learning-translation.md](langchain-continual-learning-translation.md) | Continual Learning for AI Agents | LangChain / Harrison Chase |
 | [openai-codex-symphony-translation.md](openai-codex-symphony-translation.md) | An Open-Source Spec for Codex Orchestration: Symphony | OpenAI / Kotliarskyi, Zhu, Brock |
 | [claude-code-architecture-reverse-translation.md](claude-code-architecture-reverse-translation.md) | Claude Code Architecture (Reverse Engineered) | Vikash Rungta / Substack |
+| [fowler-sensors-translation.md](fowler-sensors-translation.md) | Maintainability sensors for coding agents | Martin Fowler / Böckeler |
+| [fowler-spdd-translation.md](fowler-spdd-translation.md) | Structured-Prompt-Driven Development (SPDD) | Fowler / Wei Zhang, Jessie Jie Xia |
+| [langchain-adlc-translation.md](langchain-adlc-translation.md) | The Agent Development Lifecycle (ADLC) | LangChain / Harrison Chase |
+| [deep-agents-interpreter-translation.md](deep-agents-interpreter-translation.md) | Interpreters in Deep Agents | LangChain / Hunter Lovell |
+| [anthropic-postmortem-translation.md](anthropic-postmortem-translation.md) | An update on recent Claude Code quality reports | Anthropic 工程团队 |
+| [arxiv-agentic-harness-engineering-translation.md](arxiv-agentic-harness-engineering-translation.md) | Agentic Harness Engineering (论文) | 复旦/北大/奇绩 · Jiahang Lin 等 / arXiv |
+| [arxiv-overeager-coding-agents-translation.md](arxiv-overeager-coding-agents-translation.md) | Overeager Coding Agents (论文) | Yubin Qu 等 / arXiv |
 
 ### 中文转译 / 二手资料
 
