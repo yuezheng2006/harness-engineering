@@ -1,0 +1,26 @@
+[
+  {
+    "text": "首页",
+    "link": "/"
+  },
+  {
+    "text": "概念",
+    "link": "/concepts/00-overview",
+    "activeMatch": "^/concepts/"
+  },
+  {
+    "text": "思考",
+    "link": "/thinking/why-this-project-exists",
+    "activeMatch": "^/thinking/"
+  },
+  {
+    "text": "作品",
+    "link": "/works/harness-engineering-chinese-interpretation",
+    "activeMatch": "^/works/"
+  },
+  {
+    "text": "资料库",
+    "link": "/references/articles",
+    "activeMatch": "^/references/"
+  }
+]

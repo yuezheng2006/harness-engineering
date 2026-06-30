@@ -1,0 +1,68 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "首页"
+  },
+  {
+    "type": "file",
+    "name": "README.en",
+    "label": "English README"
+  },
+  {
+    "type": "dir-section-header",
+    "name": "concepts",
+    "label": "概念笔记",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir-section-header",
+    "name": "thinking",
+    "label": "独立思考",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir-section-header",
+    "name": "practice",
+    "label": "实践",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir-section-header",
+    "name": "feedback",
+    "label": "反馈",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir-section-header",
+    "name": "works",
+    "label": "作品",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir-section-header",
+    "name": "tools",
+    "label": "工具",
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir-section-header",
+    "name": "prompts",
+    "label": "提示词",
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir-section-header",
+    "name": "references",
+    "label": "研究资料库",
+    "collapsible": true,
+    "collapsed": false
+  }
+]

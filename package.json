@@ -1,0 +1,16 @@
+{
+  "name": "harness-engineering-docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "rspress dev",
+    "build": "rspress build",
+    "preview": "rspress preview",
+    "lint": "bash scripts/check-consistency.sh",
+    "test": "bash scripts/check-consistency.sh"
+  },
+  "devDependencies": {
+    "@rspress/core": "^2.0.15"
+  }
+}

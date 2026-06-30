@@ -1,0 +1,14 @@
+[
+  {
+    "type": "file",
+    "name": "00-overview",
+    "label": "总览"
+  },
+  "01-repo-as-source-of-truth",
+  "02-mechanical-enforcement",
+  "03-entropy-and-garbage-collection",
+  "04-agent-readability",
+  "05-throughput-changes-merge",
+  "06-harness-definition",
+  "07-spec-as-product"
+]
